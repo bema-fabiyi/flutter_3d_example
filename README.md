@@ -1,16 +1,22 @@
 # flutter_3d_example
 
-A new Flutter project.
+A Flutter app that loads and animates interactive 3d avatars using the flutter_3d_contoller pacakage
 
-## Getting Started
+## ✨ Features
+- Load and render two .glb models
+- Interactive animations for avatars
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀 Setup Instructions
+1. Clone the Repository
+ ```
+   git clone https://github.com/bema-fabiyi/flutter_3d_example.git
+```
+2. Navigate to the folder
+ ```
+  cd [project folder]
+ ```
+3. Run:
+```
+flutter pub get
+flutter run
+```
