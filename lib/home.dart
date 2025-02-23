@@ -19,18 +19,32 @@ class _HomeState extends State<Home> {
     femaleTwoController = Flutter3DController();
   }
 
-  Future<void> playAnimationF(String animationName) async {
+  void playAnimationF(String animationName) {
     femaleController.playAnimation(animationName: animationName);
-    await Future.delayed(Duration(seconds: 10), () {
-      femaleController.stopAnimation();
-    });
+
+    if (animationName == "Dance") {
+      Future.delayed(Duration(milliseconds: 4333), () {
+        femaleController.stopAnimation();
+      });
+    } else if (animationName == "Talk") {
+      Future.delayed(Duration(milliseconds: 8000), () {
+        femaleController.stopAnimation();
+      });
+    }
   }
 
-  Future<void> playAnimationFTwo(String animationName) async {
+  void playAnimationFTwo(String animationName) {
     femaleTwoController.playAnimation(animationName: animationName);
-    await Future.delayed(Duration(seconds: 10), () {
-      femaleTwoController.stopAnimation();
-    });
+
+    if (animationName == "Dance.001") {
+      Future.delayed(Duration(milliseconds: 5900), () {
+        femaleTwoController.stopAnimation();
+      });
+    } else if (animationName == "Talk") {
+      Future.delayed(Duration(milliseconds: 5000), () {
+        femaleTwoController.stopAnimation();
+      });
+    }
   }
 
   @override
@@ -67,7 +81,7 @@ class _HomeState extends State<Home> {
                   width: modelWidth,
                   child: Flutter3DViewer(
                     key: ValueKey('female_one'),
-                    src: 'assets/female.glb',
+                    src: 'assets/female_1.glb',
                     controller: femaleController,
                     progressBarColor: Colors.transparent,
                     onLoad: (modelAddress) {
@@ -80,7 +94,7 @@ class _HomeState extends State<Home> {
                   width: modelWidth,
                   child: Flutter3DViewer(
                     key: ValueKey('female_two'),
-                    src: 'assets/female_two.glb',
+                    src: 'assets/female_2.glb',
                     controller: femaleTwoController,
                     progressBarColor: Colors.transparent,
                     onLoad: (modelAddress) {
@@ -94,15 +108,32 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 IconButton(
-                  onPressed: () => playAnimationF("F_Talking_Variations_"),
+                  onPressed: () => playAnimationF("Talk"),
                   icon: CircleAvatar(
                     child: Icon(Icons.waving_hand),
                   ),
                 ),
                 IconButton(
-                  onPressed: () => playAnimationFTwo("F_Talking_Variations_"),
+                  onPressed: () => playAnimationFTwo("Talk"),
                   icon: CircleAvatar(
                     child: Icon(Icons.waving_hand),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                  onPressed: () => playAnimationF("Dance"),
+                  icon: CircleAvatar(
+                    child: Icon(Icons.music_note),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () => playAnimationFTwo("Dance.001"),
+                  icon: CircleAvatar(
+                    child: Icon(Icons.music_note),
                   ),
                 ),
               ],
