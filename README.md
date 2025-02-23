@@ -1,9 +1,9 @@
 # flutter_3d_example
 
-A Flutter app that loads and animates interactive 3d avatars using the flutter_3d_contoller pacakage
+A Flutter app that loads and animates interactive 3D avatars using the flutter_3d_contoller pacakage
 
 ## ✨ Features
-- Load and render two .glb models
+- Load and render .glb models
 - Interactive animations for avatars
 
 ## 🚀 Setup Instructions
