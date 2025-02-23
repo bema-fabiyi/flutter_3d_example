@@ -20,3 +20,5 @@ A Flutter app that loads and animates interactive 3D avatars using the flutter_3
 flutter pub get
 flutter run
 ```
+## 📱 Try app on browser
+use [this link](https://appetize.io/embed/b_2a673wnl6mhvw3bkduaoc6cdni)
